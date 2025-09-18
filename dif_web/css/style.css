@@ -1,0 +1,641 @@
+/* --- Variables de Colores --- */
+:root {
+    --color-principal: #af968b; /* Un marrón tierra */
+    --color-principal-oscuro: #beaaa1;
+    --color-secundario: #c0a98e; /* Un beige claro */
+    --color-fondo-claro: #dfdfd9b0; /* Un beige más claro para el fondo */
+    --color-texto-oscuro: #5a5454;
+    --color-gris-claro: #ccc;
+    --color-blanco: #ffffff;
+    --color-negro: #000000;
+}
+
+/* --- Estilos Generales y Reseteo Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: var(--color-blanco);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+/* --- Header Principal y Navegación --- */
+.main-header {
+    background-color: var(--color-blanco);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-gris-claro);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.logo-dif {
+    max-width: 380px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.header-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.8em;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 5px;
+}
+
+.header-text .periodo {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.header-text .slogan {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2em;
+    color: var(--color-secundario);
+    margin-top: 5px;
+}
+
+.header-divider {
+    display: none;
+}
+
+.main-nav {
+    background-color: var(--color-principal);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul li {
+    margin: 0 20px;
+}
+
+.main-nav ul li a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+/* --- Estilos para servicios_dif.php --- */
+.servicios-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.servicios-section h2 {
+    color: var(--color-principal);
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+.servicios-section p {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.servicio-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    width: calc(33.333% - 20px);
+    min-width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.servicio-card h3 {
+    color: var(--color-secundario);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.servicio-card p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.servicio-card .btn-details {
+    display: inline-block;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: auto;
+    transition: background-color 0.3s ease;
+}
+
+.servicio-card .btn-details:hover {
+    background-color: var(--color-principal-oscuro);
+}
+
+/* --- Estilos para servicio_detalle.php --- */
+.servicio-detalle-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.servicio-detalle-section h2 {
+    color: var(--color-principal);
+    margin-bottom: 20px;
+    font-size: 2.8em;
+}
+
+.servicio-detalle-section .detalle-descripcion {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+.servicio-detalle-section .detalle-box {
+    background-color: var(--color-fondo-claro);
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.servicio-detalle-section .detalle-box summary {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-secundario);
+    cursor: pointer;
+    padding: 15px 25px;
+    display: block;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.servicio-detalle-section .detalle-box summary:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.servicio-detalle-section .summary-content-wrapper {
+    padding: 20px 25px;
+    text-align: center;
+}
+
+.servicio-detalle-section .detalle-lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+.servicio-detalle-section .detalle-lista li {
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: var(--color-texto-oscuro);
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.servicio-detalle-section .detalle-lista li::before {
+    content: '•';
+    color: var(--color-principal);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5em;
+}
+
+.requisitos-generales-container {
+    padding: 10px 0;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.requisito-grupo-detalle {
+    margin-bottom: 25px;
+    border-bottom: 1px dashed var(--color-gris-claro);
+    padding-bottom: 15px;
+}
+
+.requisito-grupo-detalle:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.requisito-titulo-detalle {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-secundario);
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.requisito-lista-detalle {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+.requisito-lista-detalle li {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.requisito-lista-detalle li::before {
+    content: '•';
+    color: var(--color-principal);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5em;
+}
+
+.requisito-anuncio-detalle {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 15px;
+    font-style: italic;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.additional-info {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--color-fondo-claro);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #444;
+}
+
+.additional-info p {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+.additional-info a {
+    color: var(--color-principal);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.additional-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilos para index.php (Botones de Institución) --- */
+.instituciones-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-institucion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.15em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.233);
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn-institucion:hover {
+    background-color: var(--color-principal-oscuro);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.123);
+}
+
+.btn-institucion h3 {
+    color: var(--color-blanco);
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.btn-institucion p {
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+/* --- Estilos para contacto.php --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--color-fondo-claro);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-texto-oscuro);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-gris-claro);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: #333;
+    background-color: var(--color-blanco);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--color-secundario);
+}
+
+.contact-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.contact-info a {
+    color: var(--color-principal);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilos para faq.php --- */
+.faq-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.faq-section h2 {
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+    padding: 15px 20px;
+    background-color: #F8F8F8;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #5C4033;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #eee;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    color: #555;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 15px 20px;
+    transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+}
+
+.faq-arrow {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+/* --- Footer Principal --- */
+.main-footer {
+    background-color: var(--color-texto-oscuro);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* --- Media Queries --- */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+    .logo-dif {
+        max-width: 350px;
+        
+    }
+    .instituciones-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .btn-institucion {
+        flex: 1 1 calc(33% - 40px);
+        max-width: calc(33% - 40px);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 992px) {
+    .servicio-card {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 600px) {
+    .servicio-card {
+        width: 100%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-text h1 {
+        font-size: 2.2em;
+    }
+    .header-text .periodo {
+        font-size: 1em;
+    }
+    .header-text .slogan {
+        font-size: 1.8em;
+    }
+    .servicio-detalle-section h2 {
+        font-size: 2em;
+    }
+    .servicio-detalle-section .detalle-descripcion {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+    .servicio-detalle-section .detalle-box summary {
+        font-size: 1.2em;
+        padding: 10px 15px;
+    }
+    .servicio-detalle-section .summary-content-wrapper {
+        padding: 15px 15px;
+    }
+    .requisito-titulo-detalle {
+        font-size: 1.1em;
+    }
+    .detalle-lista li, .requisito-lista-detalle li {
+        font-size: 0.9em;
+    }
+}
